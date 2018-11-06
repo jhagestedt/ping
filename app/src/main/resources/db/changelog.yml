@@ -1,0 +1,4 @@
+databaseChangeLog:
+- include:
+    file: changelog/v001-create-ping.yml
+    relativeToChangelogFile: true

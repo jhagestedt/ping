@@ -1,0 +1,42 @@
+databaseChangeLog:
+- changeSet:
+    id: create-ping-table
+    author: jhageste
+    changes:
+    - createTable:
+        tableName: ping
+        columns:
+        - column:
+            name: id
+            type: bigint
+            constraints:
+              unique: true
+              nullable: false
+              primaryKey: true
+        - column:
+            name: uuid
+            type: varchar(36)
+            constraints:
+              unique: true
+              nullable: false
+        - column:
+            name: protocol
+            type: varchar(255)
+            constraints:
+              nullable: false
+        - column:
+            name: request
+            type: bigint
+        - column:
+            name: response
+            type: bigint
+- changeSet:
+    id: create-ping-table-increment
+    author: jhageste
+    changes:
+    - addAutoIncrement:
+        tableName: ping
+        columnName: id
+        columnDataType: bigint
+        startWith: 1
+        incrementBy: 1
