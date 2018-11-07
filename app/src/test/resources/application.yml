@@ -1,0 +1,33 @@
+server:
+  port: 8081
+
+swagger:
+  title: ping
+  description: ping
+  include: /api/.*
+
+ping:
+  jms: false
+  rest: false
+  hazelcast: false
+
+spring:
+  application:
+    name: ping
+  jpa:
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    change-log: classpath:db/changelog.yml
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:ping;MODE=PostgreSQL
+    username: sa
+    password:
+  cloud:
+    config:
+      enabled: false
+
+eureka:
+  client:
+    enabled: false

@@ -18,7 +18,6 @@ public class PingService {
     @Autowired
     private PingRepository repository;
 
-
     public void onPing(Ping ping) {
         log.info("onPing() {}", ping);
         Long time = Time.now();
