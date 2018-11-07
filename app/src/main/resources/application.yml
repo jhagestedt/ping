@@ -6,6 +6,11 @@ swagger:
   description: Ping API that sends a Ping and waits for a Pong
   include: /api/.*
 
+ping:
+  jms: true
+  rest: true
+  hazelcast: true
+
 spring:
   application:
     name: ping
@@ -23,6 +28,10 @@ spring:
 #    url: jdbc:h2:mem:ping;MODE=PostgreSQL
 #    username: sa
 #    password:
+
+feign:
+  hystrix:
+    enabled: true
 
 eureka:
 # injected by config/config-app/src/main/resources/configs/application-${profile}.yml

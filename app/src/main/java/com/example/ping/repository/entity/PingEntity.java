@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.example.protocol.Protocol;
+import com.example.Protocol;
 
 @Entity
 @Table(name = "ping")

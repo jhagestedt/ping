@@ -1,8 +1,7 @@
-package com.example.pong;
+package com.example;
 
 import java.io.Serializable;
 
-import com.example.protocol.Protocol;
 import lombok.Data;
 
 @Data
