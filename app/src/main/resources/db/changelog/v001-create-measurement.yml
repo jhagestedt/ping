@@ -1,10 +1,10 @@
 databaseChangeLog:
 - changeSet:
-    id: create-ping-table
-    author: jhageste
+    id: create-measurement-table
+    author: jhagestedt
     changes:
     - createTable:
-        tableName: ping
+        tableName: measurement
         columns:
         - column:
             name: id
@@ -31,11 +31,11 @@ databaseChangeLog:
             name: response
             type: bigint
 - changeSet:
-    id: create-ping-table-increment
-    author: jhageste
+    id: create-measurement-table-increment
+    author: jhagestedt
     changes:
     - addAutoIncrement:
-        tableName: ping
+        tableName: measurement
         columnName: id
         columnDataType: bigint
         startWith: 1

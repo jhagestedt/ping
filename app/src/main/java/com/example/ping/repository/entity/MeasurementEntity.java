@@ -10,8 +10,8 @@ import javax.persistence.Table;
 import com.example.Protocol;
 
 @Entity
-@Table(name = "ping")
-public class PingEntity {
+@Table(name = "measurement")
+public class MeasurementEntity {
 
     @Id
     @Column(name = "id",
@@ -39,7 +39,7 @@ public class PingEntity {
         return uuid;
     }
 
-    public PingEntity setUuid(String uuid) {
+    public MeasurementEntity setUuid(String uuid) {
         this.uuid = uuid;
         return this;
     }
@@ -48,7 +48,7 @@ public class PingEntity {
         return protocol;
     }
 
-    public PingEntity setProtocol(Protocol protocol) {
+    public MeasurementEntity setProtocol(Protocol protocol) {
         this.protocol = protocol;
         return this;
     }
@@ -57,7 +57,7 @@ public class PingEntity {
         return request;
     }
 
-    public PingEntity setRequest(Long request) {
+    public MeasurementEntity setRequest(Long request) {
         this.request = request;
         return this;
     }
@@ -66,12 +66,12 @@ public class PingEntity {
         return response;
     }
 
-    public PingEntity setResponse(Long response) {
+    public MeasurementEntity setResponse(Long response) {
         this.response = response;
         return this;
     }
 
-    public Long getMeasure() {
+    public Long getDuration() {
         return this.response - this.request;
     }
 }

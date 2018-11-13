@@ -5,8 +5,8 @@ import java.util.Optional;
 import com.example.Ping;
 import com.example.Pong;
 import com.example.ping.core.Time;
-import com.example.ping.repository.PingRepository;
-import com.example.ping.repository.entity.PingEntity;
+import com.example.ping.repository.MeasurementRepository;
+import com.example.ping.repository.entity.MeasurementEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,12 +16,12 @@ import org.springframework.stereotype.Service;
 public class PingService {
 
     @Autowired
-    private PingRepository repository;
+    private MeasurementRepository repository;
 
     public void onPing(Ping ping) {
         log.info("onPing() {}", ping);
         Long time = Time.now();
-        repository.save(new PingEntity()
+        repository.save(new MeasurementEntity()
             .setUuid(ping.getUuid())
             .setProtocol(ping.getProtocol())
             .setRequest(time));
@@ -30,15 +30,15 @@ public class PingService {
     public void onPong(Pong pong) {
         log.info("onPong() {}", pong);
         Long time = Time.now();
-        Optional<PingEntity> optional = repository.findByUuid(pong.getUuid());
+        Optional<MeasurementEntity> optional = repository.findByUuid(pong.getUuid());
         if (!optional.isPresent()) {
             log.warn("onPong() could not find ping for {}", pong);
             return;
         }
-        PingEntity entity = optional.get();
+        MeasurementEntity entity = optional.get();
         repository.save(entity.setResponse(time));
         log.info("onPong() -> {} ms via {}",
-            entity.getMeasure(),
+            entity.getDuration(),
             entity.getProtocol());
     }
 

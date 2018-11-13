@@ -1,6 +1,5 @@
 package com.example.ping.config;
 
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.support.converter.MappingJackson2MessageConverter;
@@ -8,7 +7,6 @@ import org.springframework.jms.support.converter.MessageConverter;
 import org.springframework.jms.support.converter.MessageType;
 
 @Configuration
-@ConditionalOnProperty(name = "ping.jms", havingValue = "true")
 public class JmsConfig {
 
     @Bean

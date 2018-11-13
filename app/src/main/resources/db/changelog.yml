@@ -1,4 +1,4 @@
 databaseChangeLog:
 - include:
-    file: changelog/v001-create-ping.yml
+    file: changelog/v001-create-measurement.yml
     relativeToChangelogFile: true
