@@ -7,7 +7,6 @@ swagger:
   include: /api/.*
 
 ping:
-  jms: true
   rest: true
 
 spring:
