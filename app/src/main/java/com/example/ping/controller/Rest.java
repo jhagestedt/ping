@@ -24,7 +24,7 @@ public class Rest implements PingApi {
     @Autowired
     private PingService pingService;
 
-    @Scheduled(initialDelay = 5000, fixedRate = 5000)
+    @Scheduled(initialDelay = 5000, fixedRate = 30000)
     public void ping() {
         Ping ping = new Ping()
             .setUuid(Uuid.generate())
