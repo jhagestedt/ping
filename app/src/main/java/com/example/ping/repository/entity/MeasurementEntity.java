@@ -72,6 +72,9 @@ public class MeasurementEntity {
     }
 
     public Long getDuration() {
+        if (this.response == null || this.request == null) {
+            return 0L;
+        }
         return this.response - this.request;
     }
 }
