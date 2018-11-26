@@ -8,6 +8,7 @@ swagger:
 
 ping:
   rest: true
+  servicebus: true
 
 spring:
   application:
@@ -36,3 +37,8 @@ eureka:
 #  client:
 #    service-url:
 #      default-zone: http://localhost:8761/eureka/
+
+azure:
+# injected by config/config-app/src/main/resources/configs/ping-${profile}.yml
+#  servicebus:
+#    connection: none
