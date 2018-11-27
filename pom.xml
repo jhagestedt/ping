@@ -19,6 +19,7 @@
     <liquibase.version>3.6.2</liquibase.version>
     <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
     <spring.cloud.version>Greenwich.M1</spring.cloud.version>
+    <azure.servicebus.version>1.2.8</azure.servicebus.version>
     <!-- java -->
     <java.version>1.8</java.version>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -54,6 +55,11 @@
         <version>${spring.cloud.version}</version>
         <type>pom</type>
         <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.microsoft.azure</groupId>
+        <artifactId>azure-servicebus</artifactId>
+        <version>${azure.servicebus.version}</version>
       </dependency>
       <dependency>
         <groupId>org.projectlombok</groupId>
