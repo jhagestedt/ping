@@ -18,12 +18,9 @@ spring:
       ddlAuto: none
   liquibase:
     changeLog: classpath:db/changelog.yml
-# injected by config/config-app/src/main/resources/configs/ping-${profile}.yml
-#  activemq:
-#    broker-url: tcp://localhost:61616
-# injected by config/config-app/src/main/resources/configs/ping-${profile}.yml
+# injected by vault or pipeline
 #  datasource:
-#    driver-class-name: org.h2.Driver
+#    driverClassName: org.h2.Driver
 #    url: jdbc:h2:mem:ping;MODE=PostgreSQL
 #    username: sa
 #    password:
@@ -33,12 +30,12 @@ feign:
     enabled: true
 
 eureka:
-# injected by config/config-app/src/main/resources/configs/application-${profile}.yml
+# injected by vault or pipeline
 #  client:
-#    service-url:
-#      default-zone: http://localhost:8761/eureka/
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
 
 azure:
-# injected by config/config-app/src/main/resources/configs/ping-${profile}.yml
+# injected by vault or pipeline
 #  servicebus:
 #    connection: none
