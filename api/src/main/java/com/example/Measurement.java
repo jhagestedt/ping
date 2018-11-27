@@ -1,9 +1,11 @@
 package com.example;
 
+import java.io.Serializable;
+
 import lombok.Data;
 
 @Data
-public class Measurement {
+public class Measurement implements Serializable {
 
     private String uuid;
     private Long request;
