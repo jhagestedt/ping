@@ -15,15 +15,15 @@ spring:
     name: ping
   jpa:
     hibernate:
-      ddl-auto: none
+      ddlAuto: none
   liquibase:
-    change-log: classpath:db/changelog.yml
+    changeLog: classpath:db/changelog.yml
 # injected by config/config-app/src/main/resources/configs/ping-${profile}.yml
 #  activemq:
-#    broker-url: tcp://localhost:61616
+#    brokerUrl: tcp://localhost:61616
 # injected by config/config-app/src/main/resources/configs/ping-${profile}.yml
 #  datasource:
-#    driver-class-name: org.h2.Driver
+#    driverClassName: org.h2.Driver
 #    url: jdbc:h2:mem:ping;MODE=PostgreSQL
 #    username: sa
 #    password:
@@ -35,5 +35,5 @@ feign:
 eureka:
 # injected by config/config-app/src/main/resources/configs/application-${profile}.yml
 #  client:
-#    service-url:
-#      default-zone: http://localhost:8761/eureka/
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
