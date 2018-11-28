@@ -3,7 +3,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.example</groupId>
   <artifactId>ping</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
@@ -11,33 +10,13 @@
   <name>ping</name>
   <description>ping project</description>
 
-  <properties>
-    <!-- frameworks -->
-    <lombok.version>1.18.4</lombok.version>
-    <swagger.version>2.9.2</swagger.version>
-    <postgres.version>42.2.5</postgres.version>
-    <liquibase.version>3.6.2</liquibase.version>
-    <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
-    <spring.cloud.version>Greenwich.M1</spring.cloud.version>
-    <azure.servicebus.version>1.2.8</azure.servicebus.version>
-    <!-- java -->
-    <java.version>1.8</java.version>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <!-- charset -->
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-  </properties>
+  <parent>
+    <groupId>com.example</groupId>
+    <artifactId>core-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
 
   <repositories>
-    <repository>
-      <id>spring-milestones</id>
-      <name>Spring Milestones</name>
-      <url>https://repo.spring.io/milestone</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
     <repository>
       <id>dev-azure-com-tsivbdevops-artifacts</id>
       <url>https://pkgs.dev.azure.com/tsivbdevops/_packaging/artifacts/maven/v1</url>
@@ -56,55 +35,6 @@
       <url>https://pkgs.dev.azure.com/tsivbdevops/_packaging/artifacts/maven/v1</url>
     </repository>
   </distributionManagement>
-
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <version>${spring.boot.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-dependencies</artifactId>
-        <version>${spring.cloud.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>azure-servicebus</artifactId>
-        <version>${azure.servicebus.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.projectlombok</groupId>
-        <artifactId>lombok</artifactId>
-        <version>${lombok.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>io.springfox</groupId>
-        <artifactId>springfox-swagger2</artifactId>
-        <version>${swagger.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>io.springfox</groupId>
-        <artifactId>springfox-swagger-ui</artifactId>
-        <version>${swagger.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.liquibase</groupId>
-        <artifactId>liquibase-core</artifactId>
-        <version>${liquibase.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.postgresql</groupId>
-        <artifactId>postgresql</artifactId>
-        <version>${postgres.version}</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
 
   <modules>
     <module>api</module>
