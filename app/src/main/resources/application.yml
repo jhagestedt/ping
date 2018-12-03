@@ -11,6 +11,7 @@ ping:
   servicebus: true
 
 cluster:
+  enabled: true
   group: ${spring.application.name}:${spring.profiles.active}
   instance: ${spring.application.name}:${spring.profiles.active}:${spring.application.instance_id:${random.value}}
 

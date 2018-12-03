@@ -14,6 +14,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,6 +24,7 @@ import org.springframework.context.annotation.Configuration;
 @Setter
 @Configuration
 @ConfigurationProperties(prefix = "cluster")
+@ConditionalOnProperty(name = "cluster.enabled", havingValue = "true")
 public class HazelcastConfig {
 
     private String group;
@@ -58,7 +60,9 @@ public class HazelcastConfig {
 
         config.setProperty("hazelcast.discovery.enabled", "true");
 
-        applicationInfoManager.getEurekaInstanceConfig();
+        if (applicationInfoManager != null) {
+            applicationInfoManager.getEurekaInstanceConfig();
+        }
         EurekaOneDiscoveryStrategyFactory.setEurekaClient(eurekaClient);
 
         DiscoveryStrategyConfig discovery = new DiscoveryStrategyConfig(new EurekaOneDiscoveryStrategyFactory());
