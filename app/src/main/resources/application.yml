@@ -25,7 +25,7 @@ spring:
     changeLog: classpath:db/changelog.yml
   cloud:
     azure:
-      credential-file: classpath:authentication.json
+      credential-file-path: classpath:authentication.json
       resource-group: tsivb-srv
       region: Central US
       eventhub:
