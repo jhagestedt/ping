@@ -23,12 +23,29 @@ spring:
       ddlAuto: none
   liquibase:
     changeLog: classpath:db/changelog.yml
+  cloud:
+    azure:
+      credential-file: classpath:authentication.json
+      resource-group: tsivb-srv
+      region: Central US
+      eventhub:
+        namespace: tsivb-eventhub
+        checkpoint-storage: tsivbeventhubstorage
+    stream:
+      bindings:
+        ping:
+          destination: ping
+          group: $Default
+        pong:
+          destination: pong
+          group: $Default
 # injected by vault or pipeline
 #  datasource:
 #    driverClassName: org.h2.Driver
 #    url: jdbc:h2:mem:ping;MODE=PostgreSQL
 #    username: sa
 #    password:
+
 
 feign:
   hystrix:
