@@ -37,7 +37,7 @@ spring:
       region: Central US
       eventhub:
         namespace: tsivb-eventhub
-        checkpoint-storage: tsivbeventhubstorage
+        checkpoint-storage-account: tsivbeventhubstorage
       servicebus:
         queue:
           enabled: false
