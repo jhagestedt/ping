@@ -38,6 +38,15 @@ spring:
       eventhub:
         namespace: tsivb-eventhub
         checkpoint-storage: tsivbeventhubstorage
+      servicebus:
+        queue:
+          enabled: false
+        topic:
+          enabled: false
+      telemetry:
+        enabled: false
+      redis:
+        enabled: false
     stream:
       bindings:
         ping:
