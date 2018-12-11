@@ -6,6 +6,7 @@ import com.example.Protocol;
 import com.example.ping.core.Uuid;
 import com.example.ping.service.PingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.Output;
@@ -21,6 +22,7 @@ import org.springframework.stereotype.Controller;
     Eventhub.PingProcessor.class,
     Eventhub.PongProcessor.class
 })
+@ConditionalOnProperty(name = "ping.eventhub", havingValue = "true")
 public class Eventhub {
 
     @Autowired

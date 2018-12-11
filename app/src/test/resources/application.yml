@@ -9,6 +9,7 @@ swagger:
 ping:
   rest: false
   servicebus: false
+  eventhub: false
 
 cluster:
   enabled: false

@@ -9,6 +9,7 @@ swagger:
 ping:
   rest: true
   servicebus: true
+  eventhub: true
 
 cluster:
   enabled: true
